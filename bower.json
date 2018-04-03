@@ -1,0 +1,6 @@
+{
+  "name": "app",
+  "dependencies": {
+    "materialize": "0.97.7"
+  }
+}
