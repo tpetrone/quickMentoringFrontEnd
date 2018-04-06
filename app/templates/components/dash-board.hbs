@@ -3,6 +3,17 @@
     <li>
       <div class="collapsible-header">
         <i class="material-icons">filter_drama</i>
+        Categorias</div>
+      <div class="collapsible-body">
+        <p>{{input type="text" placeholder="Criar categoria" value=nomeCategoria}}
+          <button {{action "criarCategoria"}} class="btn right">Salvar</button>
+        </p>
+        {{categoria-table categorias=model.categorias categoriaClick=(action categoriaClick)}}
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <i class="material-icons">filter_drama</i>
         Usuários</div>
       <div class="collapsible-body">
         {{usuario-table usuarios=model.usuarios userClick=(action userClick)}}
@@ -13,19 +24,7 @@
         <i class="material-icons">place</i>
         Mentorias</div>
       <div class="collapsible-body">
-        {{#each model.mentorias as |mentoria|}}
-          <p>{{mentoria.nome}}</p>
-        {{/each}}
-      </div>
-    </li>
-    <li>
-      <div class="collapsible-header">
-        <i class="material-icons">place</i>
-        Aplicações</div>
-      <div class="collapsible-body">
-        {{#each model.aplicacoes as |aplicacao|}}
-          <p>{{aplicacao.id}}</p>
-        {{/each}}
+        {{mentoria-table mentorias=model.mentorias mentoriaClick=(action mentoriaClick)}}
       </div>
     </li>
   </ul>

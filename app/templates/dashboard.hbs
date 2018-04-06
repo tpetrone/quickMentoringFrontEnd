@@ -8,5 +8,9 @@
   </nav>
 
 <div class="container">
-  {{dash-board model=model userClick=(action "userClick")}}
+  {{dash-board model=model 
+    userClick=(action "userClick")
+    mentoriaClick=(action "mentoriaClick")
+    categoriaClick=(action "categoriaClick")
+    criarCategoria=(action "criarCategoria")}}
 </div>

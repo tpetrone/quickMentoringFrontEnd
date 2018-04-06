@@ -15,7 +15,9 @@ export default Route.extend({
       const mentorias = this.get('ajax').request('/mentoria', { dataType: 'json' });
       const usuarios = this.get('ajax').request('/usuario', { dataType: 'json' });
       const aplicacoes = this.get('ajax').request('/aplicacao', { dataType: 'json' });
-      return RSVP.hash({ mentorias, usuarios, aplicacoes });
+      const categorias = this.get('ajax').request('/categoria', { dataType: 'json' });
+
+      return RSVP.hash({ mentorias, usuarios, aplicacoes, categorias });
     },
 
     actions: {

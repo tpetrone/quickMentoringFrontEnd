@@ -4,6 +4,6 @@ export default Component.extend({
   tagName: "tr",
 
   click() {
-    this.get('mentoriaClick')(this.get('mentoria.id'));
+    this.get('categoriaClick')(this.get('categoria.id'));
   }
 });

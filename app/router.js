@@ -10,8 +10,10 @@ Router.map(function() {
   this.route('login');
   this.route('dashboard', function() {
     this.route('usuario', { path: 'usuario/:usuario_id' });
-    this.route('mentoria');
+    this.route('mentoria', { path: 'mentoria/:mentoria_id' });
+    this.route('categoria', { path: 'categoria/:categoria_id' });
   });
+  this.route('admin');
 });
 
 export default Router;
