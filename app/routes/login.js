@@ -10,7 +10,7 @@ export default Route.extend({
   actions: {
     login() {
       this.get('session').open('jwt', {email: "email", password: "password"}).then(result => {
-        this.transitionTo('telaadmin')
+        this.transitionTo('dashboard')
       })       
     }
   }

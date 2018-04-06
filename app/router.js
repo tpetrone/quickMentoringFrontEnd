@@ -8,7 +8,10 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('login');
-  this.route('telaadmin');
+  this.route('dashboard', function() {
+    this.route('usuario', { path: 'usuario/:usuario_id' });
+    this.route('mentoria');
+  });
 });
 
 export default Router;

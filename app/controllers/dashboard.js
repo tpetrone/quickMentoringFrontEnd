@@ -5,7 +5,7 @@ export default Controller.extend({
 
   actions: {
     userClick(id) {
-      console.log(id)
+      this.transitionToRoute('dashboard.usuario', id)
     }
   }
 });
