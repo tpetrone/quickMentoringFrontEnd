@@ -1,0 +1,32 @@
+<div class="row">
+  <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        <i class="material-icons">filter_drama</i>
+        Usuários</div>
+      <div class="collapsible-body">
+        {{usuario-table usuarios=model.usuarios userClick=(action userClick)}}
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <i class="material-icons">place</i>
+        Mentorias</div>
+      <div class="collapsible-body">
+        {{#each model.mentorias as |mentoria|}}
+          <p>{{mentoria.nome}}</p>
+        {{/each}}
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <i class="material-icons">place</i>
+        Aplicações</div>
+      <div class="collapsible-body">
+        {{#each model.aplicacoes as |aplicacao|}}
+          <p>{{aplicacao.id}}</p>
+        {{/each}}
+      </div>
+    </li>
+  </ul>
+</div>

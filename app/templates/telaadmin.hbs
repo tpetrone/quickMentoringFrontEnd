@@ -1,16 +1,12 @@
-<ul class="collapsible" data-collapsible="accordion">
-  <li>
-    <div class="collapsible-header">
-      <i class="material-icons">filter_drama</i>
-      First
-      <span class="new badge">4</span></div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
-  <li>
-    <div class="collapsible-header">
-      <i class="material-icons">place</i>
-      Second
-      <span class="badge">1</span></div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
-  </li>
-</ul>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#!" {{action "logout"}}>Sair</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container">
+  {{dash-board model=model userClick=(action "userClick")}}
+</div>

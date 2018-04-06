@@ -4,7 +4,6 @@ export default Route.extend({
     session: Ember.inject.service(),
 
     beforeModel() {
-        console.log(1)
-        return this.get("session").fetch().catch(() => {});
+      return this.get("session").fetch().catch(() => {});
     }
 });

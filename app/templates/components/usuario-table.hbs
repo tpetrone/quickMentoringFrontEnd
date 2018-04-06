@@ -1,0 +1,13 @@
+<table class="striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each usuarios as |usuario|}}
+      {{usuario-row usuario=usuario userClick=(action userClick)}}
+    {{/each}}
+  </tbody>
+</table>
