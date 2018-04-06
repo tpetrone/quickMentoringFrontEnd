@@ -2,7 +2,7 @@
   <ul class="collapsible" data-collapsible="accordion">
     <li>
       <div class="collapsible-header">
-        <i class="material-icons">filter_drama</i>
+        <i class="material-icons">visibility</i>
         <h4>Admins</h4>
       </div>
       <div class="collapsible-body">
@@ -14,8 +14,9 @@
     </li>
     <li>
       <div class="collapsible-header">
-        <i class="material-icons">filter_drama</i>
-        Categorias</div>
+        <i class="material-icons">settings</i>
+        <h4>Categorias</h4>
+      </div>
       <div class="collapsible-body">
         <p>{{input type="text" placeholder="Criar categoria" value=nomeCategoria}}
           <button {{action "criarCategoria"}} class="btn">Salvar</button>
@@ -25,16 +26,18 @@
     </li>
     <li>
       <div class="collapsible-header">
-        <i class="material-icons">filter_drama</i>
-        Usuários</div>
+        <i class="material-icons">account_circle</i>
+        <h4>Usuários</h4>
+      </div>
       <div class="collapsible-body">
         {{usuario-table usuarios=model.usuarios userClick=(action userClick)}}
       </div>
     </li>
     <li>
       <div class="collapsible-header">
-        <i class="material-icons">place</i>
-        Mentorias</div>
+        <i class="material-icons">lightbulb_outline</i>
+        <h4>Mentorias</h4>
+      </div>
       <div class="collapsible-body">
         {{mentoria-table mentorias=model.mentorias mentoriaClick=(action mentoriaClick)}}
       </div>
