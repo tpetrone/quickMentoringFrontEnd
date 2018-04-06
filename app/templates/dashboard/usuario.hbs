@@ -1,4 +1,9 @@
 id: {{model.id}}<br>
 Nome: {{model.perfil.nome}}<br>
 Sede: {{model.perfil.sede.nome}}<br>
-<p><button {{action "apagar"}} class="red btn">Apagar</button></p>
+<p>
+  {{input type="text" value=model.email}}
+</p>
+
+<p><button {{action "salvar"}} class="green btn">Salvar</button>
+<button {{action "apagar"}} class="red btn">Apagar</button></p>

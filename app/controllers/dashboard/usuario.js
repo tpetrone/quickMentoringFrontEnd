@@ -11,6 +11,19 @@ export default Controller.extend({
         alert("Apagado com sucesso");
         this.transitionToRoute('dashboard');
       })
-    }
+    },
+
+    salvar() {
+      return this.get('ajax').
+      request(`/usuario/${this.get('model.id')}`, { 
+        dataType: 'json', 
+        method:'put',
+        data: this.get('model')
+      }).then(() => {
+        alert("Alterado com sucesso");
+        this.transitionToRoute('dashboard');
+      })
+    },
+
   }
 });

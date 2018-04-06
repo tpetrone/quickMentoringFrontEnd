@@ -14,6 +14,9 @@ export default Controller.extend({
     categoriaClick(id) {
       this.transitionToRoute('dashboard.categoria', id)
     },
+    adminClick(id) {
+      this.transitionToRoute('dashboard.admin', id)
+    },
     criarCategoria(nome) {
       return this.get('ajax').
       request("/categoria", { 
@@ -23,6 +26,17 @@ export default Controller.extend({
       }).then((categoria) => { 
         alert("Criado com sucesso"); 
         return categoria;
+      });
+    },
+    criarAdmin(email) {
+      return this.get('ajax').
+      request("/usuario/admin", { 
+        dataType: 'json', 
+        method:'post', 
+        data: { email } 
+      }).then((admin) => { 
+        alert("Criado com sucesso"); 
+        return admin;
       });
     }
   }

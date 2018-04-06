@@ -3,10 +3,22 @@
     <li>
       <div class="collapsible-header">
         <i class="material-icons">filter_drama</i>
+        <h4>Admins</h4>
+      </div>
+      <div class="collapsible-body">
+        <p>{{input type="text" placeholder="Criar Admin" value=emailAdmin}}
+          <button {{action "criarAdmin"}} class="btn">Salvar</button>
+        </p>
+        {{admin-table admins=model.admins adminClick=(action adminClick)}}
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        <i class="material-icons">filter_drama</i>
         Categorias</div>
       <div class="collapsible-body">
         <p>{{input type="text" placeholder="Criar categoria" value=nomeCategoria}}
-          <button {{action "criarCategoria"}} class="btn right">Salvar</button>
+          <button {{action "criarCategoria"}} class="btn">Salvar</button>
         </p>
         {{categoria-table categorias=model.categorias categoriaClick=(action categoriaClick)}}
       </div>
