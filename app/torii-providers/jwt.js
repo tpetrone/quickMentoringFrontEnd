@@ -1,16 +1,17 @@
 export default Ember.Object.extend({
-  open: function(authentication){
-    return new Ember.RSVP.Promise(function(resolve, reject){
-      Ember.$.ajax({
-        url: 'http://private-8ab80-incube.apiary-mock.com/api/usuario/login',
-        data: { email: "email", password: "password" },
-        dataType: 'json',
-        method: 'post',
-        success: Ember.run.bind(null, resolve),
-        error: Ember.run.bind(null, reject)
+  ajax: Ember.inject.service(),
+
+  open(authentication) {
+    const email = authentication.email; 
+    const password = authentication.password;
+
+    return new Ember.RSVP.Promise((resolve, reject) => {
+      return this.get('ajax').request("/usuario/login", {
+        method:'post', 
+        data: { email, password } 
+      }).then((user) => { 
+        return resolve(user);
       });
-    }).then(function(user){
-      return user;
     });
   }
 });

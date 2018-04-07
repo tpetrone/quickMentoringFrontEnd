@@ -7,17 +7,17 @@ export default Route.extend({
     ajax: Ember.inject.service(),
 
     beforeModel() {
-      console.log(this.get('session.isAuthenticated'))
       if (!this.get('session.isAuthenticated')) { return this.transitionTo('login'); }
     },
 
     model() {
-      const mentorias = this.get('ajax').request('/mentoria', { dataType: 'json' });
-      const usuarios = this.get('ajax').request('/usuario', { dataType: 'json' });
-      const aplicacoes = this.get('ajax').request('/aplicacao', { dataType: 'json' });
-      const categorias = this.get('ajax').request('/categoria', { dataType: 'json' });
+      console.log('model')
+      const usuarios = this.get('ajax').request('/usuario');
+      const mentorias = this.get('ajax').request('/mentoria');
+      const aplicacoes = this.get('ajax').request('/aplicacao');
+      const categorias = this.get('ajax').request('/categoria');
 
-      return RSVP.hash({ mentorias, usuarios, aplicacoes, categorias });
+      return RSVP.hash({ mentorias, usuarios, aplicacoes, categorias, aplicacoes });
     },
 
     actions: {

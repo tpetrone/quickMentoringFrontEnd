@@ -5,16 +5,20 @@ export default Ember.Object.extend({
   // the result of the `torii.open(providerName)` promise
   open: function(authorization){
     return new Ember.RSVP.Promise(function(resolve, reject){
-      localStorage.setItem('currentUser', authorization);
-      resolve({currentUser: authorization});
+      if (authorization) {
+        localStorage.setItem('quiMentoring:accessToken', authorization.accessToken);
+        return resolve({accessToken: authorization.accessToken});
+      } else {
+        return reject()
+      }
     });
   },
 
   fetch() {
     return new Ember.RSVP.Promise(function(resolve, reject){
-      const authorization = localStorage.getItem('currentUser')
-      if(authorization) {
-        return resolve({currentUser: authorization});
+      const authorization = localStorage.getItem('quiMentoring:accessToken');
+      if (authorization) {
+        return resolve({accessToken: authorization});
       } else {
         return reject();
       }
@@ -23,8 +27,8 @@ export default Ember.Object.extend({
 
   close() {
     return new Ember.RSVP.Promise(function(resolve, reject){
-      localStorage.removeItem('currentUser')
-      return resolve({currentUser: {}});
+      localStorage.removeItem('quiMentoring:accessToken')
+      return resolve({accessToken: {}});
     }); 
   }
 });

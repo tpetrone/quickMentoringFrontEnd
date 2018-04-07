@@ -1,15 +1,13 @@
-<div class="card-panel">
-  <b>Mentoria:</b> {{model.mentoria.nome}}<br>
-  <b>Categoria:</b> {{model.mentoria.categoria.nome}}<br>
-  <b>Mentor:</b> {{model.mentoria.usuario.perfil.nome}}<br>
-
-  <p>
-    <b>Aplicações:</b><br>
-    {{#each model.aplicacoes as |aplicacao|}}
-      {{aplicacao.usuario.perfil.nome}}<br>
-      {{aplicacao.usuario.email}}<br>
-      <div class="divider"></div>
-    {{/each}}
-  </p>
-  <p><button {{action "apagar"}} class="red btn">Apagar</button></p>
-</div>
+<b>Mentoria:</b> {{model.mentoria.nome}}<br>
+<b>Categoria:</b> {{model.mentoria.categoria.nome}}<br>
+<b>Mentor:</b> {{model.mentoria.usuario.perfil.nome}}<br>
+{{log model.mentoria}}
+<p>
+  <b>Aplicações:</b><br>
+  {{#each model.aplicacoes as |aplicacao|}}
+    {{aplicacao.usuario.perfil.nome}}<br>
+    {{aplicacao.usuario.email}}<br>
+    <div class="divider"></div>
+  {{/each}}
+</p>
+<p><button {{action "apagar"}} class="red btn">Apagar</button></p>

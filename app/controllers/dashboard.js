@@ -20,7 +20,7 @@ export default Controller.extend({
     criarCategoria(nome) {
       return this.get('ajax').
       request("/categoria", { 
-        dataType: 'json', 
+        contentType: 'application/json', 
         method:'post', 
         data: { nome } 
       }).then((categoria) => { 

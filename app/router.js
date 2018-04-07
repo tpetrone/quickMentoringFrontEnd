@@ -14,6 +14,7 @@ Router.map(function() {
     this.route('categoria', { path: 'categoria/:categoria_id' });
   });
   this.route('admin');
+  this.route('logout');
 });
 
 export default Router;

@@ -6,7 +6,7 @@ export default Controller.extend({
   actions: {
     apagar() {
       return this.get('ajax').
-      request(`/mentoria/${this.get('model.id')}`, { dataType: 'json', method:'delete' }).
+      request(`/mentoria/${this.get('model.mentoria.id')}`, { dataType: 'json', method:'delete' }).
       then(() => {
         alert("Apagado com sucesso");
         this.transitionToRoute('dashboard');

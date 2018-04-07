@@ -24,6 +24,5 @@ export default Controller.extend({
         this.transitionToRoute('dashboard');
       })
     },
-
   }
 });
